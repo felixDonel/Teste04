@@ -1,0 +1,81 @@
+<!DOCTYPE HTML >
+<html lang="pt-BR">
+    <head>
+        <title>Jogo Da Velha</title>
+         <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        
+        
+        
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+               //validação do preenchimento
+                $("#btn_comecar").click(function(){
+                    var jog1 = $("input[name=jogador1]").val();
+                    var jog2 = $("input[name=jogador2]").val();
+                    
+                    if(jog1.trim().length > 0 && jog2.trim().length > 0){
+                        ComecarJogo();
+                    }else{
+                        alert("nome(s) não preenchidos");
+                    }
+                });
+            });
+            
+            function ComecarJogo(){
+                var contadorClicks = 0;
+                $("table td").click(function(){
+                    contadorClicks++;
+                    if(contadorClicks <= 9){
+                        if(contadorClicks % 2 == 0){
+                            $(this). text("o");
+
+                        }else{
+                            $(this). text("x");
+                        }
+                        if( contadorClicks == 9){
+                            
+                        $("msg").text("jogo encerrado");
+                        }
+                    }
+                });
+            }
+            
+        </script>
+        
+        
+        
+        
+       
+        
+    </head>
+    <body>
+        <div class="configurador">
+            <span>x</span> <input type="text" name="jogador1" placeholder="Nome Jogador 1"/> 
+            vs
+            <input type="text" name="jogador2" placeholder="Nome Jogador 2"/>
+            <span>o</span>
+            <br/>
+            <button id="btn_comecar">começar jogo</button>
+            <div id="msg"></div>
+        </div>
+        
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+</html>

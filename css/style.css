@@ -1,0 +1,30 @@
+body{
+                font-family: sans-serif;
+            }
+            table,.configurador{
+                width: 500px;
+                margin:auto;
+                border:1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            table td{
+                border:1px solid black;
+                
+                height: 166px;
+                font-size: 100px;
+            }
+            .configurador input {
+                padding: 10px;
+                border: none;
+            }
+            .configurador span{
+                background-color:lightgray;
+                padding: 3px 10px;
+                border: 1px solid gray;
+            }
+            .configurador button {
+                padding: 5px 15px;
+                background-color: lightgray;
+                border: 1px solid grey;
+            }
